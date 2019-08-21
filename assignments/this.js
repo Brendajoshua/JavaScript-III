@@ -20,7 +20,7 @@ student("Brenda");
 // Principle 2
 
 // code example for Implicit Binding
-const student = {
+const Student = {
     name: 'Brenda',
     class: '4',
     classNextYear: function(){

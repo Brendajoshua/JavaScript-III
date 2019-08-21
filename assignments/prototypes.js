@@ -35,8 +35,8 @@
   console.log(jumbo.isFlying)          // false
 */
 
-/*
 
+/*
   TASK 1
 
   - Build a Person Constructor that takes name and age.
@@ -45,8 +45,24 @@
   - When eating an edible, it should be pushed into a "stomach" property which is an array.
   - Give persons the ability to poop.
   - When pooping, the stomach should empty.
+  */
+ function Person(name, age){
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+ }
+ Person.prototype.greet = function () { console.log (`Hellow my name is ${this.name} and I'm ${this.age} years old!`) } 
 
-  TASK 2
+ //giving ability to eat 
+Person.prototype.eatEdibles = function(food){
+  stomach = [];
+  return this.stomach.push(food);
+}
+Person.prototype.poop = function(){
+  return this.stomach = [];
+};
+  /*
+ TASK 2
 
   - Build a Car constructor that takes model name and make.
   - Give cars the ability to drive a distance.
@@ -55,21 +71,34 @@
   - A crashed car can't be driven any more. Attempts return a string "I crashed at x miles!", x being the miles in the odometer.
   - Give cars the ability to be repaired.
   - A repaired car can be driven again.
+*/
+function car (model, name, make){
+  this.model = model;
+  this.name = name;
+  this.make = make;
+}
 
+
+//
+car.prototype.drive = function(){
+
+}
+/*
   TASK 3
 
   - Build a Baby constructor that subclasses the Person built earlier.
   - Babies of course inherit the ability to greet, which can be strange.
   - Babies should have the ability to play, which persons don't.
   - By playing, a string is returned with some text of your choosing.
-
+*/
+/*
   TASK 4
 
   Use your imagination and come up with constructors that allow to build objects
   With amazing and original capabilities. Build 3 small ones, or a very
   complicated one with lots of state. Surprise us!
-
 */
+
 
 /*
 
