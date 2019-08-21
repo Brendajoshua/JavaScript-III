@@ -46,21 +46,29 @@
   - Give persons the ability to poop.
   - When pooping, the stomach should empty.
   */
- function Person(name, age){
-    this.name = name;
-    this.age = age;
-    this.stomach = [];
- }
- Person.prototype.greet = function () { console.log (`Hellow my name is ${this.name} and I'm ${this.age} years old!`) } 
-
- //giving ability to eat 
-Person.prototype.eatEdibles = function(food){
-  stomach = [];
-  return this.stomach.push(food);
+ function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.stomach = [];
 }
-Person.prototype.poop = function(){
-  return this.stomach = [];
-};
+Person.prototype.greet = function() {
+  return `Hi! My name is ${this.name}, I'm ${this.age} years old`
+}
+Person.prototype.eat = function(edible) {
+  this.stomach.push(edible);
+  return this.stomach;
+}
+Person.prototype.poop = function() {
+  this.stomach = [];
+  return this.stomach;
+}
+​
+// const brenda = new Person('Brenda', 20)
+// console.log(brenda.greet());
+// console.log(brenda.eat('Rice'));
+// console.log(brenda.eat('Bread'));
+// console.log(brenda.poop());
+​
   /*
  TASK 2
 
@@ -72,17 +80,39 @@ Person.prototype.poop = function(){
   - Give cars the ability to be repaired.
   - A repaired car can be driven again.
 */
-function car (model, name, make){
-  this.model = model;
+function Car(name, make) {
   this.name = name;
   this.make = make;
+  this.odometer = 0;
+  this.canItDrive = true;
 }
-
+Car.prototype.drive = function(distance) {
+  if(this.canItDrive) {
+    return `I crashed at ${this.odometer} miles!`
+  }
+​
+  this.odometer += distance;
+  return this.odometer;
+}
+Car.prototype.crash = function() {
+  this.canItDrive = false;
+}
+Car.prototype.repair = function() {
+  this.canItDrive = true;
+}
+​
+// const toyota = new Car('Toyota', 'Corolla')
+// console.log(toyota.drive(100));
+// console.log(toyota.drive(50));
+// console.log(toyota.crash());
+// console.log(toyota.drive(80));
+// console.log(toyota.drive(100));
+// console.log(toyota.repair());
+// console.log(toyota.drive(80));
+// console.log(toyota.drive(100));
 
 //
-car.prototype.drive = function(){
 
-}
 /*
   TASK 3
 
@@ -91,6 +121,21 @@ car.prototype.drive = function(){
   - Babies should have the ability to play, which persons don't.
   - By playing, a string is returned with some text of your choosing.
 */
+function Baby(name, age) {
+  Person.call(this, name, age);
+}
+​
+Baby.prototype = Object.create(Person.prototype);
+​
+Baby.prototype.play = function() {
+  return "Yayy!!! I love playing";
+}
+​
+// const babyBrenda = new Baby('Baby Brenda', 2);
+// console.log(babyBrenda.greet());
+// console.log(babyBrenda.eat('Milk'));
+// console.log(babyBrenda.play());
+​
 /*
   TASK 4
 
