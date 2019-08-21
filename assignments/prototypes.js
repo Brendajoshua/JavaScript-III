@@ -136,8 +136,20 @@ Baby.prototype.play = function() {
   With amazing and original capabilities. Build 3 small ones, or a very
   complicated one with lots of state. Surprise us!
 */
-
-
+//Read constructor that takes book,publisher,genre
+//If a read is not interesting it should not be recommended
+//Otherwise it should display the authors name
+function Read (book,publisher,genre){
+    this.book = book;
+    this.publisher = publisher;
+    this.genre = genre;
+    this.interesting = false;
+}
+Read.prototype.recommend = function(){
+  if(this.interesting){
+    return 'I wont pick ${this.book} for my library'
+  }
+}
 /*
 
   STRETCH TASK
