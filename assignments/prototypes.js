@@ -62,11 +62,11 @@ Person.prototype.poop = function() {
   this.stomach = [];
   return this.stomach;
 }
-const brenda = new Person('Brenda', 20)
+//const brenda = new Person('Brenda', 20)
 //console.log(brenda.greet());
-// console.log(brenda.eat('Rice'));
-// console.log(brenda.eat('Bread'));
-// console.log(brenda.poop());
+ //console.log(brenda.eat('Rice'));
+ //console.log(brenda.eat('Bread'));
+ //console.log(brenda.poop());
   /*
  TASK 2
 
@@ -93,18 +93,20 @@ Car.prototype.drive = function(distance) {
 }
 Car.prototype.crash = function() {
   this.canItDrive = false;
+  return 'Car has crashed'
 }
 Car.prototype.repair = function() {
   this.canItDrive = true;
+  return 'Car is now repaired'
 }
-const toyota = new Car('Toyota', 'Corolla')
+//const toyota = new Car('Toyota', 'Corolla')
+//console.log(toyota.drive(100));
+//console.log(toyota.drive(50));
+//console.log(toyota.crash());
+//console.log(toyota.drive(80));
 // console.log(toyota.drive(100));
-// console.log(toyota.drive(50));
-// console.log(toyota.crash());
-// console.log(toyota.drive(80));
-// console.log(toyota.drive(100));
-// console.log(toyota.repair());
-// console.log(toyota.drive(80));
+//console.log(toyota.repair());
+//console.log(toyota.drive(80));
 // console.log(toyota.drive(100));
 
 //
@@ -125,10 +127,10 @@ Baby.prototype = Object.create(Person.prototype);
 Baby.prototype.play = function() {
   return "Yayy!!! I love playing";
 }
-const babyBrenda = new Baby('Baby Brenda', 2);
-// console.log(babyBrenda.greet());
-// console.log(babyBrenda.eat('Milk'));
-// console.log(babyBrenda.play());
+//const babyBrenda = new Baby('Baby Brenda', 2);
+//console.log(babyBrenda.greet());
+//console.log(babyBrenda.eat('Milk'));
+//console.log(babyBrenda.play());
 /*
   TASK 4
 
@@ -147,9 +149,10 @@ function Read (book,publisher,genre){
 }
 Read.prototype.recommend = function(){
   if(this.interesting){
-    return 'I wont pick ${this.book} for my library'
+    return `I wont pick ${this.book} for my library`
   }
 }
+
 /*
 
   STRETCH TASK
@@ -267,7 +270,7 @@ Humanoid.prototype.greet = function() {
     language: 'Elvish',
   });
   /*
-  console.log(mage.createdAt); // Today's date
+  console.log(mage.createdAt); //Today's date
   console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
   console.log(swordsman.healthPoints); // 15
   console.log(mage.name); // Bruce
