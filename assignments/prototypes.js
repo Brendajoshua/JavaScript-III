@@ -62,8 +62,8 @@ Person.prototype.poop = function() {
   this.stomach = [];
   return this.stomach;
 }
-// const brenda = new Person('Brenda', 20)
-// console.log(brenda.greet());
+const brenda = new Person('Brenda', 20)
+//console.log(brenda.greet());
 // console.log(brenda.eat('Rice'));
 // console.log(brenda.eat('Bread'));
 // console.log(brenda.poop());
@@ -85,7 +85,7 @@ function Car(name, make) {
   this.canItDrive = true;
 }
 Car.prototype.drive = function(distance) {
-  if(this.canItDrive) {
+  if(this.canItDrive === false) {
     return `I crashed at ${this.odometer} miles!`
   }
   this.odometer += distance;
@@ -97,7 +97,7 @@ Car.prototype.crash = function() {
 Car.prototype.repair = function() {
   this.canItDrive = true;
 }
-// const toyota = new Car('Toyota', 'Corolla')
+const toyota = new Car('Toyota', 'Corolla')
 // console.log(toyota.drive(100));
 // console.log(toyota.drive(50));
 // console.log(toyota.crash());
@@ -125,7 +125,7 @@ Baby.prototype = Object.create(Person.prototype);
 Baby.prototype.play = function() {
   return "Yayy!!! I love playing";
 }
-// const babyBrenda = new Baby('Baby Brenda', 2);
+const babyBrenda = new Baby('Baby Brenda', 2);
 // console.log(babyBrenda.greet());
 // console.log(babyBrenda.eat('Milk'));
 // console.log(babyBrenda.play());
